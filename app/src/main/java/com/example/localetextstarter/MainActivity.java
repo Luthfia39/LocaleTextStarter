@@ -9,8 +9,13 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +31,19 @@ public class MainActivity extends AppCompatActivity {
                 showHelp();
             }
         });
+
+//    menentukan tgl kadaluarsa (misal 5 hari setelah hari ini)
+        Date myDate = new Date();
+        long expiredDate = myDate.getTime() + TimeUnit.DAYS.toMillis(5);
+        myDate.setTime(expiredDate);
+
+        String formatDate = DateFormat.getDateInstance().format(myDate);
+        TextView expiredDateTexView = findViewById(R.id.date);
+        expiredDateTexView.setText(formatDate);
     }
+
+
+
 
     /**
      * Shows the Help screen.
@@ -64,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_help) {
             Intent intent = new Intent(this, HelpActivity.class);
             startActivity(intent);
+            return true;
+        }else if (id == R.id.action_language){
+            Intent languageIntent = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(languageIntent);
             return true;
         }
         return super.onOptionsItemSelected(item);
