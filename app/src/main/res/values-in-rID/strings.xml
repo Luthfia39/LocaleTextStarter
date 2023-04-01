@@ -8,6 +8,8 @@
     <string name="nougat">Kemasan Permen Nougat</string>
     <string name="action_language">Bahasa</string>
     <string name="expired_label">"Kadaluarsa : "</string>
-    <string name="price_label">"Harga : "</string>
+    <string name="price_label">"Harga/bungkus : "</string>
     <string name="btn_submit">Kirim</string>
+    <string name="price100_label">Harga/100 bungkus :</string>
+    <string name="currency">IDR</string>
 </resources>

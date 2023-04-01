@@ -21,6 +21,8 @@
     <string name="dial_log_message">Can\'t resolve app for ACTION_DIAL Intent.</string>
     <string name="action_language">Language</string>
     <string name="expired_label">Expired date :</string>
-    <string name="price_label">Price :</string>
+    <string name="price_label">Price/pack :</string>
     <string name="btn_submit">Submit</string>
+    <string name="price100_label">Price/100 packs :</string>
+    <string name="currency">USD</string>
 </resources>
