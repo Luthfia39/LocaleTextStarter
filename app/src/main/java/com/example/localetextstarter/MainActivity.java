@@ -22,9 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class MainActivity extends AppCompatActivity {
     private TextView textView_price_100_packs;
     private EditText input_price;
-    private double price;
-    private double price_100_packs;
-
+    private double price, price_100_packs;
     private final static double USD_TO_IDR_EXCHANGE_RATE = 14968.65;
     private final static double USD_TO_SAR_EXCHANGE_RATE = 3.75;
 
@@ -57,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void convertCurrency() {
         price = Double.parseDouble(input_price.getText().toString());
+//        menyimpan format penulisan berdasarkan bahasa yg digunakan
         NumberFormat format = NumberFormat.getCurrencyInstance();
+//        menyimpan nama negara berdasarkan bahasa yg digunakan
         String toCurrency = Locale.getDefault().getCountry();
 
         if (toCurrency == "ID"){
@@ -117,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void expiredDate(){
         Date myDate = new Date();
-        long expiredDate = myDate.getTime() + TimeUnit.DAYS.toMillis(5);
-        myDate.setTime(expiredDate);
+        long expDate = myDate.getTime() + TimeUnit.DAYS.toMillis(5);
+        myDate.setTime(expDate);
 
         String formatDate = DateFormat.getDateInstance().format(myDate);
         TextView expiredDateTexView = findViewById(R.id.date);
